@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import ButtonList from './components/buttonList';
 import { PaperProvider } from 'react-native-paper';
 import customTheme from './CustomTheme';
+import SearchButton from './components/searchButton';
 
 const mainTopics = [
   "Big Data",
@@ -19,16 +20,33 @@ const mainTopics = [
 
 const App = () => {
   const [selectedTopics, setSelectedTopics] = useState(mainTopics);
+  const [isLoading, setLoading] = useState(false);
+  const [searchInitiated, setSearchInitiated] = useState(false);
 
   const handleSelectionChange = (newSelectedTopics) => {
     setSelectedTopics(newSelectedTopics);
   };
 
+  const search = (topics) => {
+      console.log("searching");
+  }
+
+  const handleSearch = () => {
+      setLoading(true);
+      setSearchInitiated(true);
+      setTimeout(() => {
+        search(selectedTopics);
+        setLoading(false);
+      }, 1000);
+      
+  }
+
   return (
     <PaperProvider theme={customTheme}>
       <View style={{ backgroundColor: customTheme.colors.background }}>
         <ButtonList onSelectionChange={handleSelectionChange} initialTopics={selectedTopics}  />
-        <Text style={{ color: 'white'}}>{JSON.stringify(selectedTopics)}</Text>
+        <SearchButton isLoading={isLoading} onPress={handleSearch}/>
+        { searchInitiated && !isLoading && <Text style={{ color: 'white' }}>{JSON.stringify(selectedTopics)}</Text> }
       </View>
     </PaperProvider>
 
