@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import CustomButton from './customButton';
 
 const mainTopics = [
@@ -43,6 +43,11 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       flexWrap: 'wrap',
+      borderWidth: 1,
+      borderRadius: 8,
+      borderColor: 'white', 
+      paddingVertical: 20,
+      marginHorizontal: 4
     },
   });
 

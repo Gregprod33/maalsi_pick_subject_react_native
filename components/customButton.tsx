@@ -22,7 +22,7 @@ const CustomButton = ({ title, onPress }) => {
         borderRadius: 8,
         margin: 4
       }}
-      labelStyle={{ fontSize: 8, fontWeight: 'bold', marginHorizontal: 4, marginVertical: 0 }} >
+      labelStyle={{ fontSize: 8, fontWeight: 'bold', marginHorizontal: 4, marginVertical: 0, color: theme.colors.onBackground }} >
       {title}
     </Button>
   );
