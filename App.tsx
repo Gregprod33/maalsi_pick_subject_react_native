@@ -75,13 +75,13 @@ const App = () => {
           source={require('./assets/logo.png')}
           style={{ width: 100, height: 100, marginBottom: 50, marginTop: 40 }} 
         />
-        <Text style={{ color: 'white', fontSize: 10 }}>Choisir un ou plusieurs thèmes (tous par défaut)</Text>
+        <Text style={{ color: customTheme.colors.tertiary, fontSize: 10 }}>Choisir un ou plusieurs thèmes (tous par défaut)</Text>
         <ButtonList onSelectionChange={setSelectedTopics} initialTopics={selectedTopics} 
          />
         <SearchButton isLoading={isLoading} onPress={handleSearch} />
         <View style={styles.searchResultsContainer}>
           {searchInitiated && !isLoading && finalSubjects.map((finalSubject, index) => (
-            <Text key={index} style={{ color: 'white', fontSize: 12, fontWeight: 'bold' }}>
+            <Text key={index} style={{ color: customTheme.colors.tertiary, fontSize: 12, fontWeight: 'bold' }}>
               {"Sujet " + (index + 1) + "( " + finalSubject.name + ") : " + finalSubject.subject + '\n'}
             </Text>
           ))}
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     maxHeight: 200,
     width: '100%',
-    marginHorizontal: 4,
+    paddingHorizontal: 30
   },
 });
 

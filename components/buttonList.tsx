@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import CustomButton from './customButton';
+import customTheme from '../CustomTheme';
 
 const mainTopics = [
     "Big Data",
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
       flexWrap: 'wrap',
       borderWidth: 1,
       borderRadius: 8,
-      borderColor: 'white', 
+      borderColor: customTheme.colors.tertiary,
       paddingVertical: 20,
       marginHorizontal: 4
     },
