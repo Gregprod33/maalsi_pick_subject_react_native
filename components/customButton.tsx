@@ -6,18 +6,13 @@ import theme from '../CustomTheme';
 
 
 
-const CustomButton = ({ title, onPress }) => {
-  const [isSelected, setIsSelected] = useState(true);
+const CustomButton = ({ title, onPress, isSelected }) => {
 
-  const handlePress = () => {
-    setIsSelected(!isSelected); 
-    onPress(); 
-  };
 
   return (
     <Button 
       mode='contained' 
-      onPress={handlePress}
+      onPress={onPress}
       style={{ backgroundColor: isSelected ? theme.colors.darkYellow : theme.colors.primary,
         borderRadius: 8,
         margin: 4

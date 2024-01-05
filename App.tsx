@@ -28,35 +28,40 @@ const useSubjectSearch = (selectedTopics) => {
     if (selectedTopics.length > 0) {
       const newSubjects = subjects.topics.filter(subject => selectedTopics.includes(subject.name));
       setSelectedSubjects(newSubjects);
+    } else {
+      setSelectedSubjects([]);
+      setFinalSubjects([]);
     }
   }, [selectedTopics]);
 
   const findSubjects = () => {
     let finalSubjects = [];
     let indexes = Array.from({ length: selectedSubjects.length }, (_, i) => i);
-    if (selectedSubjects.length === 1) {
+    if (selectedSubjects.length === 0) {
+      indexes = [];
+    } else if (selectedSubjects.length === 1) {
       indexes = [0];
     } else {
       indexes = indexes.sort(() => 0.5 - Math.random()).slice(0, 2);
     }
 
-    indexes.forEach(index => {
-      let subject = selectedSubjects[index];
-      let randomSubject = subject.subjects[Math.floor(Math.random() * subject.subjects.length)];
-      finalSubjects.push({ name: subject.name, subject: randomSubject });
-    });
-  
+    if(indexes.length != 0) {
+      indexes.forEach(index => {
+        let subject = selectedSubjects[index];
+        let randomSubject = subject.subjects[Math.floor(Math.random() * subject.subjects.length)];
+        finalSubjects.push({ name: subject.name, subject: randomSubject });
+      });
+    }
     setFinalSubjects(finalSubjects);
   };
 
-  return { finalSubjects, findSubjects };
+  return { finalSubjects, findSubjects, selectedSubjects };
 }
 
 const App = () => {
   const [selectedTopics, setSelectedTopics] = useState(mainTopics);
   const [isLoading, setLoading] = useState(false);
   const [searchInitiated, setSearchInitiated] = useState(false);
-
   const { finalSubjects, findSubjects } = useSubjectSearch(selectedTopics);
 
   const handleSearch = () => {
@@ -73,19 +78,21 @@ const App = () => {
       <View style={{ backgroundColor: customTheme.colors.onBackground, flex: 1, alignItems: 'center' }}>
         <Image 
           source={require('./assets/logo.png')}
-          style={{ width: 100, height: 100, marginBottom: 50, marginTop: 40 }} 
+          style={{ width: 100, height: 100, marginBottom: 40, marginTop: 40 }} 
         />
         <Text style={{ color: customTheme.colors.tertiary, fontSize: 10 }}>Choisir un ou plusieurs thèmes (tous par défaut)</Text>
-        <ButtonList onSelectionChange={setSelectedTopics} initialTopics={selectedTopics} 
+        <ButtonList onSelectionChange={setSelectedTopics} initialTopics={mainTopics}
          />
         <SearchButton isLoading={isLoading} onPress={handleSearch} />
         <View style={styles.searchResultsContainer}>
-          {searchInitiated && !isLoading && finalSubjects.map((finalSubject, index) => (
-            <Text key={index} style={{ color: customTheme.colors.tertiary, fontSize: 12, fontWeight: 'bold' }}>
+          {selectedTopics.length === 0 && <Text style={{ color: customTheme.colors.error, fontSize: 12, fontWeight: 'bold' }}>Veuillez choisir au moins un thème</Text>}
+          {searchInitiated && !isLoading && selectedTopics.length !== 0 && finalSubjects.map((finalSubject, index) => (
+            <Text key={index} style={styles.subjectText}>
               {"Sujet " + (index + 1) + "( " + finalSubject.name + ") : " + finalSubject.subject + '\n'}
             </Text>
           ))}
         </View>
+        <Text  style={{ color: customTheme.colors.darkYellow, fontSize: 8, marginBottom: 4 }}>MAALSI - Greg Boës - ©2024</Text>
       </View>
     </PaperProvider>
   );
@@ -98,6 +105,13 @@ const styles = StyleSheet.create({
     maxHeight: 200,
     width: '100%',
     paddingHorizontal: 30
+  },
+  subjectText: { // style pour les Text des sujets
+    color: customTheme.colors.tertiary,
+    fontSize: 12,
+    fontWeight: 'bold',
+    textAlign: 'center', 
+    width: '100%', 
   },
 });
 

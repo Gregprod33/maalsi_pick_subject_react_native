@@ -1,54 +1,69 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import CustomButton from './customButton';
 import customTheme from '../CustomTheme';
+import SelectCheckbox from './selectCheckbox';
 
-const mainTopics = [
-    "Big Data",
-    "Blockchain",
-    "Cloud et virtualisation",
-    "Cybersécurité",
-    "Développement",
-    "IA",
-    "Management et stratégie",
-    "Mobilité",
-    "Optimisation du SI",
-    "SI et environnement"
-  ];
 
-const ButtonList = ({initialTopics, onSelectionChange }) => {
+const ButtonList = ({ initialTopics, onSelectionChange }) => {
   const [selectedTopics, setSelectedTopics] = useState(initialTopics);
+  const [isChecked, setChecked] = useState(true);
 
-  const handlePress = (topic) => {
-    const newSelectedTopics = selectedTopics.includes(topic) ? selectedTopics.filter(t => t !== topic) : [...selectedTopics, topic];
+  useEffect(() => {
+    // Mise à jour lors de la modification de la case à cocher
+    const newSelectedTopics = isChecked ? initialTopics : [];
     setSelectedTopics(newSelectedTopics);
     onSelectionChange(newSelectedTopics);
+  }, [isChecked, onSelectionChange]);
+
+  const handlePress = (topic) => {
+    // Mise à jour lors de la pression sur un bouton
+    const updateSelectedTopics = selectedTopics.includes(topic) 
+      ? selectedTopics.filter(t => t !== topic) 
+      : [...selectedTopics, topic];
+    setSelectedTopics(updateSelectedTopics);
+    onSelectionChange(updateSelectedTopics);
   };
 
+  const handleSelect = () => {
+    setChecked(!isChecked);
+  }
+
   return (
-    <View style={styles.container}>
-      {mainTopics.map((topic, index) => (
+    <View style={styles.mainContainer}>
+      <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+        <Text style={{ color: customTheme.colors.tertiary, fontSize: 10 }}>Tous</Text>
+        <SelectCheckbox onPress={handleSelect} isChecked={isChecked}></SelectCheckbox>
+      </View>
+      <View style={styles.container}>
+      {initialTopics.map((topic, index) => (
         <CustomButton 
           key={index}
           title={topic}
           onPress={() => handlePress(topic)}
+          isSelected={selectedTopics.includes(topic)}
         />
       ))}
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-    container: {
-      flexDirection: 'row',
+    mainContainer: {
+      flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      flexWrap: 'wrap',
       borderWidth: 1,
       borderRadius: 8,
       borderColor: customTheme.colors.tertiary,
-      paddingVertical: 20,
+      paddingVertical: 10,
       marginHorizontal: 4
+    },
+    container: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      flexWrap: 'wrap',
     },
   });
 

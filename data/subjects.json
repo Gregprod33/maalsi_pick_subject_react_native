@@ -16,12 +16,12 @@
       {
         "name": "Blockchain",
         "subjects": [
-          "Le droit face aux technologies tel que la blockchain ?",
+          "Le droit face aux technologies tel que la blockchain",
           "Blockchain et covid 19",
           "Blockchain et empreinte énergétique",
-          "Applications de la blockchain en finance",
+          "Blockchain et entreprise",
           "Blockchain et sécurité des données",
-          "La blockchain dans le secteur public",
+          "La blockchain et optimisation du SI",
           "Blockchain et supply chain",
           "Smart Contracts et Blockchain",
           "Blockchain et identité numérique",
@@ -31,16 +31,17 @@
       {
         "name": "Cloud et virtualisation",
         "subjects": [
-          "Migration dans le Cloud: Des blocages existent encore…",
+          "Migration dans le Cloud, bonne ou mauvaise idée ?",
           "La conteneurisation et la virtualisation : enjeux, avantages, limites",
           "La migration Cloud n'est pas viable, vive le Cloud Native.",
           "Le Cloud : la réponse aux problèmes de sécurité des données",
           "Cloud computing et transformation numérique",
-          "Cloud public vs Cloud privé",
-          "Défis de la gestion multi-cloud",
           "Virtualisation et optimisation des ressources IT",
           "Sécurité et conformité dans le Cloud",
-          "Cloud et solutions de reprise après sinistre"
+          "Impact de l'adoption du Cloud sur la performance et l'agilité organisationnelle.",
+          "Performance et coût : le Cloud est-il la solution.",
+          "Gestion du risque dans la transition vers des infrastructures Cloud en entreprise."
+
         ]
       },
       {
@@ -52,10 +53,10 @@
           "Monter son SOC est-il une bonne réponse aux risques Cyber ?",
           "Comment gérer les risques Cyber en 2023 quand on est une petite entreprise ?",
           "Cybersécurité : comment impliquer les utilisateurs ?",
-          "Tendances en cybersécurité pour 2023",
           "Gestion des incidents de sécurité",
-          "Ransomware : comment se protéger ?",
-          "L'importance de la formation en cybersécurité"
+          "Edge Security : enjeux pour les réseaux d'entreprise étendus.",
+          "L'évolution des menaces : préparer les entreprises aux cybersécurités émergentes.",
+          "Audit de sécurité : une étape essentielle pour les stratégies de défense en entreprise."
         ]
       },
       {
@@ -65,29 +66,30 @@
           "Stratégie de maintenabilité logicielle et les couts associés",
           "En quoi le DevOps peut améliorer la qualité de votre S.I.",
           "Enjeux et positionnement de la RA/RV pour l’entreprise 4.0",
-          "Tendances actuelles en développement logiciel",
           "Intégration continue et déploiement continu (CI/CD)",
-          "Développement d'applications mobiles",
-          "Microservices et architecture orientée services",
-          "Programmation fonctionnelle en entreprise",
-          "Sécurité dans le développement d'applications"
+          "Développement et IA : quels perspectives ?",
+          "Sécurité dans le développement d'applications",
+          "Impact de la blockchain sur les pratiques de développement logiciel en entreprise.",
+          "L’importance de l'UX/UI dans la satisfaction client et la performance business.",
+          "Microservices et architecture orientée services : défis et bénéfices pour les entreprises."
         ]
       },
       {
         "name": "IA",
         "subjects": [
           "L'IA peut-elle assurer la sécurité d'une infrastructure de façon autonamee ?",
-          "Techniques pour la détection du signal faible en intelligence éconameique",
+          "Techniques pour la détection du signal faible en intelligence économique",
           "IA, la révolution marketing",
           "Quelle éthique pour l’intelligence artificielle ?",
           "IA et apprentissage automatique en entreprise",
           "IA dans la gestion de la relation client",
           "Robots et automatisation des processus",
           "IA dans le diagnostic médical",
-          "Traitement automatique du langage naturel",
-          "IA et analyse prédictive"
+          "Le rôle de l'IA dans la personnalisation de l'expérience utilisateur sur les plateformes numériques.",
+          "L'intelligence artificielle au service de la gestion des ressources humaines : recrutement et gestion des talents."
         ]
       },
+      
       {
           "name": "Management et stratégie",
           "subjects": [
@@ -99,8 +101,9 @@
             "Gestion des changements technologiques en entreprise",
             "Stratégies de transformation numérique",
             "Leadership et management agile",
-            "Gestion de projet IT",
-            "Planification stratégique IT"
+            "La DSI face aux défis de la conformité réglementaire et de la protection des données.",
+            "Intégration de l'intelligence artificielle dans les processus décisionnels d'entreprise."
+          
           ]
         },
         {
@@ -109,28 +112,29 @@
             "Outils numériques au service de la mobilité",
             "Consumérisation de l’IT et BYOD",
             "Impacts du télétravail pour le SI",
-            "Développement d'applications mobiles d'entreprise",
             "Sécurité des appareils mobiles",
             "Gestion de la mobilité d'entreprise",
-            "Tendances en technologies mobiles",
             "5G et ses applications en entreprise",
-            "Stratégies de marketing mobile",
-            "IoT et mobilité"
+            "IoT et mobilité",
+            "Développement et enjeux des réseaux sans fil pour les entreprises modernes.",
+            "Cloud computing et sa contribution à la flexibilité et l'efficacité du travail à distance.",
+            "Intelligence artificielle et analyse de données au service de la mobilité"
           ]
         },
         {
           "name": "Optimisation du SI",
           "subjects": [
-            "Indicateurs pour la gestion de projet informatique",
+            "Quels sont les indicateurs les plus pertinents pour gérer au mieux un projet informatique dans une entreprise 4.0 ?",
             "Mise en place d'une veille stratégique efficace",
-            "Éconameie d'énergie et optimisation des SI",
+            "Économie d'énergie et optimisation des SI",
             "Amélioration continue des services IT",
-            "Gestion des actifs logiciels",
-            "Optimisation des processus d'affaires",
             "Automatisation des services IT",
             "Cloud computing et efficacité du SI",
-            "Alignement du SI avec les objectifs d'affaires",
-            "Gestion de la performance des systèmes d'information"
+            "Alignement du SI avec les objectifs stratégiques de l'entreprise",
+            "Big Data et Business Intelligence : Leviers pour la prise de décision stratégique en entreprise.",
+            "Transformation digitale : comment piloter efficacement le changement organisationnel.",
+            "Intégration de l'Internet des Objets (IoT) dans les processus opérationnels des entreprises."
+            
           ]
         },
         {
@@ -143,9 +147,9 @@
             "Gestion éco-responsable des équipements IT",
             "Informatique verte et stratégies d'entreprise",
             "Réduction de l'empreinte carbone du SI",
-            "Recyclage et gestion des déchets électroniques",
-            "Énergie renouvelable pour les datacenters",
-            "Systèmes d'information et responsabilité sociale"
+            "Systèmes d'information et responsabilité sociale",
+            "Intégration des principes de l'économie circulaire dans la gestion des systèmes d'information.",
+            "Quelles stratégies pour diminuer la consommation énergétique des infrastructures IT ?"
           ]
         } 
     ]
