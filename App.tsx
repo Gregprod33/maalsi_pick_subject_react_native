@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, ScrollView, Text, Image, StyleSheet } from 'react-native';
 import ButtonList from './components/buttonList';
 import { PaperProvider } from 'react-native-paper';
 import customTheme from './CustomTheme';
@@ -78,20 +78,20 @@ const App = () => {
       <View style={{ backgroundColor: customTheme.colors.onBackground, flex: 1, alignItems: 'center' }}>
         <Image 
           source={require('./assets/logo.png')}
-          style={{ width: 100, height: 100, marginBottom: 40, marginTop: 40 }} 
+          style={{ width: 100, height: 100, marginBottom: 30, marginTop: 20 }} 
         />
         <Text style={{ color: customTheme.colors.tertiary, fontSize: 10 }}>Choisir un ou plusieurs thèmes (tous par défaut)</Text>
         <ButtonList onSelectionChange={setSelectedTopics} initialTopics={mainTopics}
          />
         <SearchButton isLoading={isLoading} onPress={handleSearch} />
-        <View style={styles.searchResultsContainer}>
+        <ScrollView contentContainerStyle={styles.searchResultsContainer}>
           {selectedTopics.length === 0 && <Text style={{ color: customTheme.colors.error, fontSize: 12, fontWeight: 'bold' }}>Veuillez choisir au moins un thème</Text>}
           {searchInitiated && !isLoading && selectedTopics.length !== 0 && finalSubjects.map((finalSubject, index) => (
             <Text key={index} style={styles.subjectText}>
               {"Sujet " + (index + 1) + "( " + finalSubject.name + ") : " + finalSubject.subject + '\n'}
             </Text>
           ))}
-        </View>
+        </ScrollView>
         <Text  style={{ color: customTheme.colors.darkYellow, fontSize: 8, marginBottom: 4 }}>MAALSI - Greg Boës - ©2024</Text>
       </View>
     </PaperProvider>
@@ -100,18 +100,13 @@ const App = () => {
 
 const styles = StyleSheet.create({
   searchResultsContainer: {
-    flex: 1,
-    alignItems: 'center',
-    maxHeight: 200,
-    width: '100%',
-    paddingHorizontal: 30
+    paddingHorizontal: 5,
+    width: '100%'
   },
-  subjectText: { // style pour les Text des sujets
+  subjectText: { 
     color: customTheme.colors.tertiary,
-    fontSize: 12,
+    fontSize: 10,
     fontWeight: 'bold',
-    textAlign: 'center', 
-    width: '100%', 
   },
 });
 

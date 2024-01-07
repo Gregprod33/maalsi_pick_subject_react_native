@@ -31,7 +31,7 @@ const ButtonList = ({ initialTopics, onSelectionChange }) => {
 
   return (
     <View style={styles.mainContainer}>
-      <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginVertical: 5 }}>
         <Text style={{ color: customTheme.colors.tertiary, fontSize: 10 }}>Tous</Text>
         <SelectCheckbox onPress={handleSelect} isChecked={isChecked}></SelectCheckbox>
       </View>
@@ -51,13 +51,12 @@ const ButtonList = ({ initialTopics, onSelectionChange }) => {
 
 const styles = StyleSheet.create({
     mainContainer: {
-      flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
       borderWidth: 1,
       borderRadius: 8,
       borderColor: customTheme.colors.tertiary,
-      paddingVertical: 10,
+      paddingVertical: 8,
       marginHorizontal: 4
     },
     container: {

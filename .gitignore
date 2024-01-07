@@ -33,3 +33,10 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+build/
+*maalsi
+*.keystore
+*/keystore.old
+**/maalsi.keystore.old
+eas.json
